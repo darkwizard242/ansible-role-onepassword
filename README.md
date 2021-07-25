@@ -1,6 +1,6 @@
-[![build-test](https://github.com/darkwizard242/ansible-role-1password/workflows/build-and-test/badge.svg?branch=master)](https://github.com/darkwizard242/ansible-role-1password/actions?query=workflow%3Abuild-and-test) [![release](https://github.com/darkwizard242/ansible-role-1password/workflows/release/badge.svg)](https://github.com/darkwizard242/ansible-role-1password/actions?query=workflow%3Arelease) ![Ansible Role](https://img.shields.io/ansible/role/52607?color=dark%20green%20) ![Ansible Role](https://img.shields.io/ansible/role/d/52607?label=role%20downloads) ![Ansible Quality Score](https://img.shields.io/ansible/quality/52607?label=ansible%20quality%20score) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ansible-role-1password&metric=alert_status)](https://sonarcloud.io/dashboard?id=ansible-role-1password) [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=ansible-role-1password&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=ansible-role-1password) [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=ansible-role-1password&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=ansible-role-1password) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=ansible-role-1password&metric=security_rating)](https://sonarcloud.io/dashboard?id=ansible-role-1password) ![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/darkwizard242/ansible-role-1password?label=release) ![GitHub repo size](https://img.shields.io/github/repo-size/darkwizard242/ansible-role-1password?color=orange&style=flat-square)
+[![build-test](https://github.com/darkwizard242/ansible-role-onepassword/workflows/build-and-test/badge.svg?branch=master)](https://github.com/darkwizard242/ansible-role-onepassword/actions?query=workflow%3Abuild-and-test) [![release](https://github.com/darkwizard242/ansible-role-onepassword/workflows/release/badge.svg)](https://github.com/darkwizard242/ansible-role-onepassword/actions?query=workflow%3Arelease) ![Ansible Role](https://img.shields.io/ansible/role/52607?color=dark%20green%20) ![Ansible Role](https://img.shields.io/ansible/role/d/52607?label=role%20downloads) ![Ansible Quality Score](https://img.shields.io/ansible/quality/52607?label=ansible%20quality%20score) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ansible-role-onepassword&metric=alert_status)](https://sonarcloud.io/dashboard?id=ansible-role-onepassword) [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=ansible-role-onepassword&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=ansible-role-onepassword) [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=ansible-role-onepassword&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=ansible-role-onepassword) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=ansible-role-onepassword&metric=security_rating)](https://sonarcloud.io/dashboard?id=ansible-role-onepassword) ![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/darkwizard242/ansible-role-onepassword?label=release) ![GitHub repo size](https://img.shields.io/github/repo-size/darkwizard242/ansible-role-onepassword?color=orange&style=flat-square)
 
-# Ansible Role: 1password
+# Ansible Role: onepassword
 
 Role to install (_by default_) [1password](https://1password.com/) package for Debian based and EL based systems or uninstall (_if passed as var_) on **Debian** based and **EL** based systems.
 
@@ -45,7 +45,7 @@ onepassword_repo_el_desired_state: present
 
 Variable                                  | Description
 ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-onepassword_app_name                      | Name of 1Password package to install by default i.e. `1password` . You may use other packages such as `1password-8-openj9`, `1password-15-hotspot` etc.. as well.
+onepassword_app_name                      | Name of 1Password package to install by default i.e. `1password`.
 onepassword_desired_state                 | State of the 1password_app_name package (i.e. `1password` package itself.). Whether to install, verify if available or to uninstall (i.e. ansible apt module values: `present`, `latest`, or `absent`)
 onepassword_pre_reqs_debian               | Package required by 1Password on Debain based systems.
 onepassword_pre_reqs_debian_desired_state | State of the 1password_pre_reqs_debian_desired_state packages. Whether to install, verify if available or to uninstall (i.e. ansible apt module values: `present`, `latest`, or `absent`)
@@ -75,17 +75,17 @@ For default behaviour of role (i.e. installation of **1password** package) in an
 ```yaml
 - hosts: servers
   roles:
-    - darkwizard242.1password
+    - darkwizard242.onepassword
 ```
 
-For customizing behavior of role (for e.g. installation of j9 jvm instead of hotspot, **1password-15-openj9** package) in ansible playbooks.
+For customizing behavior of role (for e.g. update to latest available stable version, **1password** package) in ansible playbooks.
 
 ```yaml
 - hosts: servers
   roles:
     - darkwizard242.1password
   vars:
-    onepassword_app_name: 1password
+    onepassword_app_name: latest
 ```
 
 For customizing behavior of role (for e.g. un-installation of **1password** package) in ansible playbooks.
@@ -93,7 +93,7 @@ For customizing behavior of role (for e.g. un-installation of **1password** pack
 ```yaml
 - hosts: servers
   roles:
-    - darkwizard242.1password
+    - darkwizard242.onepassword
   vars:
     onepassword_desired_state: absent
 ```
