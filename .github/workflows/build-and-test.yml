@@ -25,7 +25,7 @@ jobs:
     - name: Checkout source code
       uses: actions/checkout@v1
       with:
-        path: '${HOME}/.ansible/roles/darkwizard242.1password'
+        path: 'darkwizard242.1password'
         fetch-depth: 0
 
     - name: SonarCloud Scan
@@ -53,6 +53,7 @@ jobs:
       uses: actions/checkout@v1
       with:
         path: 'darkwizard242.1password'
+        path: '${HOME}/.ansible/roles/darkwizard242.1password'
 
     - name: Set up Python 3.8
       uses: actions/setup-python@v2
