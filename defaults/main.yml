@@ -1,0 +1,27 @@
+---
+# defaults file for 1password
+
+# Generic Variables
+onepassword_app_name: 1password
+onepassword_desired_state: present
+
+# Debian Family Variables
+onepassword_pre_reqs_debian:
+  - gnupg2
+onepassword_pre_reqs_debian_desired_state: present
+onepassword_repo_debian_gpg_key_url: https://downloads.1password.com/linux/keys/1password.asc
+onepassword_repo_debian_gpg_key_keyring: /usr/share/keyrings/1password-archive-keyring.gpg
+onepassword_repo_debian: "deb [arch=amd64 signed-by={{ onepassword_repo_debian_gpg_key_keyring }}] https://downloads.1password.com/linux/debian/amd64 stable main"
+onepassword_repo_debian_filename: "{{ onepassword_app_name }}"
+onepassword_repo_debian_desired_state: present
+
+# EL Family Variables
+onepassword_repo_el_name: 1password
+onepassword_repo_el_description: 1Password Stable Channel
+onepassword_repo_el: https://downloads.1password.com/linux/rpm/stable/$basearch
+onepassword_repo_el_gpg_key: https://downloads.1password.com/linux/keys/1password.asc
+onepassword_repo_el_enabled: yes
+onepassword_repo_el_filename: "{{ onepassword_app_name }}"
+onepassword_repo_el_gpgcheck: yes
+onepassword_repo_el_repogpgcheck: yes
+onepassword_repo_el_desired_state: present
