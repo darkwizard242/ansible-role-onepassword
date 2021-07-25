@@ -16,11 +16,12 @@ onepassword_repo_debian_filename: "{{ onepassword_app_name }}"
 onepassword_repo_debian_desired_state: present
 
 # EL Family Variables
-onepassword_repo_el_gpg_key: https://downloads.1password.com/linux/keys/1password.asc
-onepassword_repo_el_name: 1Password Stable Channel
-onepassword_repo_el_description: 1password
+onepassword_repo_el_name: 1password
+onepassword_repo_el_description: 1Password Stable Channel
 onepassword_repo_el: https://downloads.1password.com/linux/rpm/stable/$basearch
+onepassword_repo_el_gpg_key: https://downloads.1password.com/linux/keys/1password.asc
+onepassword_repo_el_enabled: yes
 onepassword_repo_el_filename: "{{ onepassword_app_name }}"
 onepassword_repo_el_gpgcheck: yes
-onepassword_repo_el_enabled: yes
+onepassword_repo_el_repogpgcheck: yes
 onepassword_repo_el_desired_state: present
