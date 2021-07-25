@@ -24,8 +24,8 @@ galaxy_info:
     - 1password
     - os
     - system
-    - 1password-gui
-    - password-storage
+    - 1passwordgui
+    - passwordstorage
     - secure
 
 dependencies: []
