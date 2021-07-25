@@ -25,7 +25,7 @@ jobs:
     - name: Checkout source code
       uses: actions/checkout@v1
       with:
-        path: 'darkwizard242.1password'
+        path: 'darkwizard242.onepassword'
         fetch-depth: 0
 
     - name: SonarCloud Scan
@@ -45,14 +45,14 @@ jobs:
     strategy:
       max-parallel: 8
       matrix:
-        IMAGE: [ubuntu-20.04, ubuntu-18.04, debian-buster, debian-stretch]
+        IMAGE: [ubuntu-20.04, ubuntu-18.04, debian-buster]
 
     steps:
 
     - name: Checkout source code
       uses: actions/checkout@v1
       with:
-        path: 'darkwizard242.1password'
+        path: 'darkwizard242.onepassword'
 
     - name: Set up Python 3.8
       uses: actions/setup-python@v2
