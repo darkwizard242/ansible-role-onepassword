@@ -25,7 +25,7 @@ jobs:
     - name: Checkout source code
       uses: actions/checkout@v1
       with:
-        path: 'darkwizard242.1password'
+        path: '/etc/ansible/roles/darkwizard242.1password'
         fetch-depth: 0
 
     - name: SonarCloud Scan
