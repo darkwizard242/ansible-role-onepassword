@@ -1,0 +1,20 @@
+---
+# tasks file for 1password | EL Family
+
+- name: EL Family | Adding repository {{ onepassword_repo_el }}
+  yum_repository:
+    name: "{{ onepassword_repo_el_name }}"
+    description: "{{ onepassword_repo_el_description }}"
+    baseurl: "{{ onepassword_repo_el }}"
+    enabled: "{{ onepassword_repo_el_enabled }}"
+    gpgkey: "{{ onepassword_repo_el_gpg_key }}"
+    gpgcheck: "{{ onepassword_repo_el_gpgcheck }}"
+    repo_gpgcheck: "{{ onepassword_repo_el_repogpgcheck }}"
+    file: "{{ onepassword_repo_el_filename }}"
+    state: "{{ onepassword_repo_el_desired_state }}"
+
+- name: EL Family | Installing {{ onepassword_app_name }}
+  yum:
+    name: "{{ onepassword_app_name }}"
+    state: "{{ onepassword_desired_state }}"
+    update_cache: yes
