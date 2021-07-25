@@ -17,7 +17,7 @@ jobs:
     - name: Checkout source code
       uses: actions/checkout@v1
       with:
-        path: 'darkwizard242.1password'
+        path: 'darkwizard242.onepassword'
 
     - name: Set up Python 3.8
       uses: actions/setup-python@v2
