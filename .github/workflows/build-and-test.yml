@@ -52,7 +52,7 @@ jobs:
     - name: Checkout source code
       uses: actions/checkout@v1
       with:
-        path: '${HOME}/.ansible/roles/darkwizard242.1password'
+        path: '../.ansible/roles/darkwizard242.1password'
 
     - name: Set up Python 3.8
       uses: actions/setup-python@v2
