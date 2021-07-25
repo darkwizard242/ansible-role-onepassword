@@ -1,6 +1,6 @@
 ---
 galaxy_info:
-  role_name: 1password
+  role_name: onepassword
   author: darkwizard242
   description: 1Password installation on Debian-based and EL-based systems.
   company: none
