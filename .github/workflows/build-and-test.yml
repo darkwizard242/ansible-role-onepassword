@@ -45,7 +45,7 @@ jobs:
     strategy:
       max-parallel: 8
       matrix:
-        IMAGE: [ubuntu-20.04, ubuntu-18.04, debian-buster]
+        IMAGE: [ubuntu-20.04, ubuntu-18.04, debian-buster, centos-8, centos-7]
 
     steps:
 
