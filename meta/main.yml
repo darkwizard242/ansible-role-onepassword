@@ -10,10 +10,12 @@ galaxy_info:
   platforms:
     - name: Ubuntu
       versions:
-        - bionic
+        - jammy
         - focal
+        - bionic
     - name: Debian
       versions:
+        - bullseye
         - buster
     - name: EL
       versions:
