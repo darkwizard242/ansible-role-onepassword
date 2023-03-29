@@ -2,33 +2,33 @@
 # tasks file for 1password | Debian/Ubuntu Family
 
 - name: Debian/Ubuntu Family | Install python3-apt
-  apt:
+  ansible.builtin.apt:
     name: python3-apt
     state: present
     force_apt_get: yes
     update_cache: yes
 
 - name: Debian/Ubuntu Family | Installing {{ onepassword_pre_reqs_debian }} for {{ onepassword_app_name }}
-  apt:
+  ansible.builtin.apt:
     name: "{{ onepassword_pre_reqs_debian }}"
     state: "{{ onepassword_pre_reqs_debian_desired_state }}"
     force_apt_get: yes
 
 - name: Debian/Ubuntu Family | Add gpg signing key for {{ onepassword_app_name }}
-  apt_key:
+  ansible.builtin.apt_key:
     url: "{{ onepassword_repo_debian_gpg_key_url }}"
     keyring: "{{ onepassword_repo_debian_gpg_key_keyring }}"
     state: present
 
 - name: Debian/Ubuntu Family | Adding repository {{ onepassword_repo_debian }}
-  apt_repository:
+  ansible.builtin.apt_repository:
     repo: "{{ onepassword_repo_debian }}"
     filename: "{{ onepassword_repo_debian_filename }}"
     state: "{{ onepassword_repo_debian_desired_state }}"
     update_cache: yes
 
 - name: Debian/Ubuntu Family | Installing {{ onepassword_app_name }}
-  apt:
+  ansible.builtin.apt:
     name: "{{ onepassword_app_name }}"
     state: "{{ onepassword_desired_state }}"
     force_apt_get: yes
