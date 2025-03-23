@@ -83,7 +83,7 @@ For customizing behavior of role (for e.g. update to latest available stable ver
 ```yaml
 - hosts: servers
   roles:
-    - darkwizard242.1password
+    - darkwizard242.onepassword
   vars:
     onepassword_app_name: latest
 ```
